@@ -1,5 +1,3 @@
-/* jshint node: true */
-
 'use strict';
 
 var path = require('path');
@@ -7,7 +5,7 @@ var path = require('path');
 function getTaskConfig(projectConfig) {
 	var taskConfig = {
 		svgSrc: projectConfig.paths.src.svgs + '**/*.svg',
-		outDir: '',
+		spriteOutputDir: projectConfig.paths.dirs.build,
 		settings: {
 		    dest: '', // If using modes, leave this empty and configure on a mode level - determines where to put the SVG symbol/css sprite/def
 		    mode: {
