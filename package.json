@@ -1,6 +1,6 @@
 {
   "name": "cartridge-svgs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "SVG module for the cartridge project",
   "keywords": [
     "gulp",
