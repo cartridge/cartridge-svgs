@@ -19,7 +19,7 @@ function getTaskConfig(projectConfig) {
 					render: {
 						scss: { // make it render scss and not css
 							dest: '_tools.svg-sprite.scss', // scss file name
-							template: path.join(process.cwd(), projectConfig.paths.src.images, '/svg-sprite-sass.tpl')
+							template: path.join(process.cwd(), projectConfig.dirs.src, '/svg-sprite-sass.tpl')
 						}
 					}
 				}
