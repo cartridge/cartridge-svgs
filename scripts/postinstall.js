@@ -8,6 +8,7 @@ var cartridgeUtil = require('cartridge-module-util')(packageConfig);
 var path          = require('path');
 
 var TASK_NAME = 'svgs';
+var IMAGE_DIR;
 
 // Transform function for adding paths
 function projectConfigAddPaths(config) {
@@ -18,6 +19,8 @@ function projectConfigAddPaths(config) {
 	if(!config.paths.dest.hasOwnProperty(TASK_NAME)) {
 		config.paths.dest[TASK_NAME]  = config.dirs.dest  + '/images/svgs/';
 	}
+
+	IMAGE_DIR = config.dirs.dest  + '/images';
 
 	return config;
 }
@@ -33,5 +36,11 @@ cartridgeUtil.addToRc()
 	})
 	.then(function(){
 		return cartridgeUtil.addModuleConfig(path.resolve('_config', 'task.' + TASK_NAME + '.js'));
+	})
+	.then(function() {
+		return cartridgeUtil.copyToProjectDir([{
+			copyPath: 'svg-sprite-sass.tpl',
+			destinationPath: IMAGE_DIR
+		}])
 	})
 	.then(cartridgeUtil.finishInstall);

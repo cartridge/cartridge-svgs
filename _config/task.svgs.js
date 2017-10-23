@@ -5,7 +5,7 @@ var path = require('path');
 function getTaskConfig(projectConfig) {
 	var taskConfig = {
 		svgSrc: projectConfig.paths.src.svgs + '**/*.svg',
-		spriteOutputDir: projectConfig.paths.dirs.build,
+		spriteOutputDir: projectConfig.dirs.dest,
 		settings: {
 		    dest: '', // If using modes, leave this empty and configure on a mode level - determines where to put the SVG symbol/css sprite/def
 		    mode: {

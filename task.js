@@ -32,17 +32,6 @@ module.exports = function(gulp, projectConfig, tasks) {
 			.pipe(gulp.dest(taskConfig.spriteOutputDir))
 	});
 
-	/* --------------------
-	*	WATCH TASKS
-	* ---------------------*/
-
-	gulp.task('watch:' + TASK_NAME, function () {
-		gulp.watch(
-			taskConfig.watch,
-			[TASK_NAME]
-		);
-	});
-
 	/* ----------------------------
 	*	CARTRIDGE TASK MANAGEMENT
 	* -----------------------------*/
@@ -51,6 +40,4 @@ module.exports = function(gulp, projectConfig, tasks) {
 	projectConfig.cleanPaths.push(projectConfig.paths.dest[TASK_NAME]);
 	// Add the task to the default list
 	tasks.default.push(TASK_NAME);
-	// Add the task to the watch list
-	tasks.watch.push('watch:' + TASK_NAME);
 }
